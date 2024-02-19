@@ -90,7 +90,8 @@ function Contact() {
         />
         {/* Agregar el widget de reCAPTCHA v3 */}
         <ReCAPTCHA
-          sitekey="6LfUi3cpAAAAAKC9a0F0QD0kybya_l3O9o7qDeai"
+          sitekey="6Lemj3cpAAAAAKgAi-xRP99pUAxTlLmQdjJxh3-O
+          "
           onChange={handleRecaptchaChange}
         />
         <div>
