@@ -52,9 +52,10 @@ function Contact() {
     }
   };
 
-  const handleRecaptchaChange = (token: string) => {
-    setRecaptchaToken(token);
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token ?? ""); // Si token es null, asigna una cadena vacía en su lugar
   };
+
 
   return (
     <div className="flex flex-col px-6 pb-32 pt-48">
