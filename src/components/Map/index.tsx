@@ -6,10 +6,11 @@ export default function Map() {
   return (
     <GoogleMapsEmbed
       apiKey={apiKey}
-      height={200}
+      height={380}
       width="100%"
       mode="place"
       q="Av. 9 Nte. #12N - 10"
+      zoom='19'
     />
   );
 }

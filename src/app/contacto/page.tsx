@@ -16,7 +16,7 @@ function Contact() {
           <button className="button-outline">¡Hablanos!</button>
         </div>
       </form>
-      <div>
+      <div className="mt-16">
       <Map />
       </div>
     </div>
