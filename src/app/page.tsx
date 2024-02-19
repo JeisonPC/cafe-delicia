@@ -1,24 +1,58 @@
+'use client'
 import Image from "next/image";
 import Header from "@/components/Header";
 import styles from "./page.module.css";
 import { comforter_Brush } from "@/app/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+
 
 export default function Home() {
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.5,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+      },
+    },
+  };
   return (
     <>
       {/* HERO */}
-      <section
-        className={`${styles.hero} flex items-center	justify-center	flex-col  lg:w-full `}
+      <motion.section
+        className={`${styles.hero} flex items-center justify-center flex-col lg:w-full`}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="p-4 flex gap-4 flex-col">
-          <h1 className="text-white	text-4xl	text-center	">
+          <h1 className="text-white text-4xl text-center">
             Disfrutá del sabor auténtico en{" "}
             <span className="brandCafe brandCafe-orange">Café</span>
-            <span
-              className={`${comforter_Brush.className} brandDelicia-orange`}
-            >
+            <span className={`${comforter_Brush.className} brandDelicia-orange`}>
               delicia
             </span>
           </h1>
@@ -28,14 +62,16 @@ export default function Home() {
             delicia con nosotros!
           </p>
         </div>
-        <div className="absolute bottom-16 flex flex-col gap-8	">
+        <motion.div
+          className="absolute bottom-16 flex flex-col gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <span className="text-white">Conocenos</span>
-          <FontAwesomeIcon
-            icon={faAnglesDown}
-            className="text-white text-4xl"
-          />
-        </div>
-      </section>
+          <FontAwesomeIcon icon={faAnglesDown} className="text-white text-4xl" />
+        </motion.div>
+      </motion.section>
       <section className="lg:px-52 gap-16 px-6 py-14 flex flex-col">
         <div className="flex flex-col gap-4 lg:flex-row">
           <Image

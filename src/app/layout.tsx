@@ -3,6 +3,10 @@ import { poppins, comforter_Brush } from "./fonts";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { motion, HTMLMotionProps } from 'framer-motion'
+
+type PageTransitionProps = HTMLMotionProps<'div'>
+type PageTransitionRef = React.ForwardedRef<HTMLDivElement>
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -22,7 +22,6 @@ function Contact() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
     // Validar que se haya generado el token de reCAPTCHA
     if (!recaptchaToken) {
@@ -31,7 +30,7 @@ function Contact() {
     }
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contacto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +58,7 @@ function Contact() {
 
   return (
     <div className="flex flex-col px-6 pb-32 pt-48">
-      <form onSubmit={handleSubmit} className="text-center flex flex-col gap-8">
+      <form method="POST" onSubmit={handleSubmit} className="text-center flex flex-col gap-8">
         <h1 className="text-left text-6xl font-semibold">¿Querés hablar?</h1>
         <input
           type="text"
@@ -90,8 +89,7 @@ function Contact() {
         />
         {/* Agregar el widget de reCAPTCHA v3 */}
         <ReCAPTCHA
-          sitekey="6Lemj3cpAAAAAKgAi-xRP99pUAxTlLmQdjJxh3-O
-          "
+          sitekey="6Lemj3cpAAAAAKgAi-xRP99pUAxTlLmQdjJxh3-O"
           onChange={handleRecaptchaChange}
         />
         <div>
