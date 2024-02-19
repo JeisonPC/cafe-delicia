@@ -1,33 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Color primario */
+  --color-primary-50: #fdf4e7;
+  --color-primary-800: #5f3907;
+  --color-primary-900: #301c03;
+  /* Color Secundario */
+  --color-secondary: #fff4e5;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-secondary);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+img {
+  height: revert-layer;
+}
+
+.brandCafe {
+  font-weight: 700;
+}
+
+.brandCafe-orange {
+  color: #ee8e11;
+}
+
+.brandDelicia {
+  font-family: comforter_Brush;
+}
+.brandDelicia-orange {
+  color: #ee8e11;
+}
+
+.button-outline {
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 6px 32px 6px 32px;
+  color: var(--color-primary-800);
+}
+
+input {
+  padding: 16px 24px;
+  border: 2px solid #5f3907;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #5f3907;
+}
+
+input::placeholder {
+  color: #5f3907;
 }
